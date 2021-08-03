@@ -3,7 +3,7 @@ let len = 30;
 
 function randomArray() {
   while (arr.length < len) {
-    let r = Math.floor(Math.random() * 300) + 1;
+    let r = Math.floor(Math.random() * 300) + 5;
     if (arr.indexOf(r) === -1) arr.push(r);
   }
   let pag = document.getElementById("arr");

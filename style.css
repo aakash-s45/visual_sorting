@@ -1,26 +1,41 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+body{
+  overflow: hidden;
+}
+
+.text{
+  color: white;
+}
+.text:hover{
+  color: rgb(231, 204, 48);
+}
 #toolbar {
           width: 100%;
           height: 100px;
-          background-color: pink;
+          background-color: rgb(100, 64, 29);
+          box-shadow: 5px 5px 5px rgba(97, 93, 93, 0.397);
+          color: whitesmoke;
+          /* display: flex;
+          justify-content: center; */
         }
 
         #generateArray {
           font-size: 16px;
-          font-family: cursive;
           display: inline-block;
           margin-left: 25px;
           margin-right: 15px;
+          
         }
 
         #generateArray:hover {
-          color: rgb(212, 212, 212) !important;
+          color: rgb(231, 204, 48) !important;
         }
-
-
-
+        
         #arraySize {
           font-size: 16px;
-          font-family: cursive;
           display: inline-block;
           margin-left: 15px;
           margin-right: 15px;
@@ -42,9 +57,7 @@
         }
 
         .algoButton {
-          color: white;
           font-size: 16px;
-          font-family: monospace;
           display: inline-block;
           margin-left: 15px;
           margin-right: 15px;
@@ -58,7 +71,6 @@
         .currentAlgoButton {
           color: rgb(241, 94, 255);
           font-size: 16px;
-          font-family: monospace;
           display: inline-block;
           margin-left: 15px;
           margin-right: 15px;
@@ -67,7 +79,6 @@
 
         #sort {
           font-size: 16px;
-          font-family: monospace;
           display: inline-block;
           margin-left: 15px;
         }
@@ -160,26 +171,27 @@
         input[type=range]:focus::-ms-fill-upper {
             background: #ccc;
         }
-*{
-    margin: 0;
-    padding: 0;
-}
-body{
-    overflow: hidden;
-}
+
 .arr{
     height: 95vh;
     width: 95vw;
-    background-color: skyblue;
+    background-color: rgba(151, 144, 144, 0.5);
     display: flex;
     flex-direction: row;
     justify-content: center;
+    backdrop-filter: blur(3px);
+    box-shadow: 5px 5px 5px rgba(97, 93, 93, 0.397);
 }
 .elem{
-    background-color: red;
+    background-color: rgb(197, 152, 69);
     display: inline-block;
-    /* width: 100px; */
     text-align: center;
     margin: 5px;
-
+    margin-top: 0px;
+    color: rgb(0, 0, 0);
+    font-size: 80%;
+    box-shadow: 10px 10px 10px rgba(97, 93, 93, 0.397);
+    backdrop-filter: blur(3px);
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
 }

@@ -7,26 +7,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Visual Sorting</title>
     <link rel="stylesheet" href="style.css">
-    
+
 </head>
 
 <body>
 
-    <div id="toolbar">
-        <div id="generateArray" onclick="window.location.reload();" style="color: green; cursor: pointer;">Random Array Generator</div>
-       <div class="separator"></div>
-        <div id="arraySize" style="color: green;">Change Array Size Here</div>
-        <input type="range" min="0" max="100" id="changeSize" style="background: white; cursor: pointer;">
-        <div class="separator"></div>
-        <div class="currentAlgoButton">Merge Sort</div>
-        <div class="algoButton">Bubble Sort</div>
-        <div class="algoButton">Heap Sort</div>
-        <div class="algoButton">Quick Sort</div>
-        <div class="separator"></div>
-            
-        <div id="sort" style="color: green; cursor: pointer;">Sort Here</div>
-    </div>
-    <header>igl</header>
+    <header>
+        <div id="toolbar">
+            <div id="generateArray" class="text" onclick="window.location.reload();" style="cursor: pointer;">Random Array Generator</div>
+            <div class="separator"></div>
+            <div id="arraySize" class="text"">Change Array Size Here</div>
+            <input type="range" min="0" max="100" id="changeSize" style="background: white; cursor: pointer;">
+            <div class="separator"></div>
+            <div class="currentAlgoButton text">Merge Sort</div>
+            <div class="algoButton text">Bubble Sort</div>
+            <div class="algoButton text">Heap Sort</div>
+            <div class="algoButton text">Quick Sort</div>
+            <div class="separator"></div>
+            <div id="sort" class="text" cursor: pointer;">Sort Here</div>
+        </div>
+    </header>
     <main>
         <center>
             <div class="arr" id="arr">
@@ -34,7 +34,7 @@
             </div>
         </center>
     </main>
-    <footer>dsa lord</footer>
+    <footer>Deepak dsa lord</footer>
     <script src="script.js"></script>
 </body>
 
