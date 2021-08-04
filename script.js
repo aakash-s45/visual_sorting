@@ -46,8 +46,5 @@ slider2len();
 
 let generateButton = document.getElementById("genbtn");
 generateButton.addEventListener("onclick",()=>{console.log("clicked btn");});
-// generateButton.addEventListener("onclick", console.log("clicked"));
-
 let slideVal = document.getElementById("slider");
 slideVal.addEventListener("change", randomArray);
-// slideVal.addEventListener("mousedown",myfun);
