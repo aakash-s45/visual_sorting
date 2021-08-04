@@ -48,3 +48,20 @@ let generateButton = document.getElementById("genbtn");
 generateButton.addEventListener("onclick",()=>{console.log("clicked btn");});
 let slideVal = document.getElementById("slider");
 slideVal.addEventListener("change", randomArray);
+console.log(arr);
+
+function selectionSort() { 
+  let arrlenght = arr.length;
+
+  for(let first=0; first<arrlenght-1; first++){
+  for(let second = first+1; second <arrlenght; second++){
+    if(arr[second] < arr[first]){
+      let temp= arr[second];
+      arr[second]=arr[first];
+      arr[first]=temp;
+    }
+  }
+}
+}
+selectionSort(arr);
+console.log(arr);
