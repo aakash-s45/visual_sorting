@@ -13,18 +13,15 @@
 <body>
 
     <header>
-        <div id="toolbar">
-            <div id="generateArray" class="text" onclick="window.location.reload();" style="cursor: pointer;">Random Array Generator</div>
-            <div class="separator"></div>
-            <div id="arraySize" class="text"">Change Array Size Here</div>
-            <input type="range" min="0" max="100" id="changeSize" style="background: white; cursor: pointer;">
-            <div class="separator"></div>
-            <div class="currentAlgoButton text">Merge Sort</div>
-            <div class="algoButton text">Bubble Sort</div>
-            <div class="algoButton text">Heap Sort</div>
-            <div class="algoButton text">Quick Sort</div>
-            <div class="separator"></div>
-            <div id="sort" class="text" cursor: pointer;">Sort Here</div>
+        <div id="toolbar" class="toolbar">
+            <div id="genbtn" class="btn text" onclick="randomArray()">Random Array Generator</div>
+            <div id="genbtn2" class="genbtn btn text"><input type="button" id="genbtn" value="click" onclick="randomArray()"></div>
+            <div class="slider"><input type="range" name="slider" min="2" max="100" value="3" id="slider"></div>
+            <div class="btn currentAlgoButton text">Merge Sort</div>
+            <div class="btn algoButton text">Bubble Sort</div>
+            <div class="btn algoButton text">Heap Sort</div>
+            <div class="btn algoButton text">Quick Sort</div>
+            <div id="sort" class="btn text">Sort Here</div>
         </div>
     </header>
     <main>
