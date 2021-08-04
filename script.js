@@ -46,11 +46,8 @@ slider2len();
 
 let generateButton = document.getElementById("genbtn");
 generateButton.addEventListener("onclick",()=>{console.log("clicked btn");});
-// generateButton.addEventListener("onclick", console.log("clicked"));
-
 let slideVal = document.getElementById("slider");
 slideVal.addEventListener("change", randomArray);
-// slideVal.addEventListener("mousedown",myfun);
 console.log(arr);
 
 function selectionSort() { 
@@ -62,15 +59,9 @@ function selectionSort() {
       let temp= arr[second];
       arr[second]=arr[first];
       arr[first]=temp;
-      
     }
-    
   }
 }
-
-
-  
-
 }
 selectionSort(arr);
 console.log(arr);
