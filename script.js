@@ -46,11 +46,8 @@ slider2len();
 
 let generateButton = document.getElementById("genbtn");
 generateButton.addEventListener("onclick",()=>{console.log("clicked btn");});
-// generateButton.addEventListener("onclick", console.log("clicked"));
-
 let slideVal = document.getElementById("slider");
 slideVal.addEventListener("change", randomArray);
-// slideVal.addEventListener("mousedown",myfun);
 console.log(arr);
 
 function selectionSort() { 
@@ -62,16 +59,11 @@ function selectionSort() {
       let temp= arr[second];
       arr[second]=arr[first];
       arr[first]=temp;
-      
     }
-    
   }
 }
-
-
-  
-
 }
+<<<<<<< HEAD
 
 function bubble_sort(arr){
      
@@ -135,3 +127,7 @@ console.log(arr_merge);
 
 
 
+=======
+selectionSort(arr);
+console.log(arr);
+>>>>>>> 0559e74d863bfda811275b5515b5a7995e528a7c
