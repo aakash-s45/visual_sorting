@@ -36,7 +36,7 @@ function randomArray() {
   }
   if (y.length < 12) {
     for (i = 0; i < y.length; i++) {
-      y[i].innerHTML=arr[i];
+      y[i].innerHTML = arr[i];
     }
   }
 }
@@ -60,23 +60,45 @@ function selectionSort() {
   let arrayHTML = document.getElementById("arr");
   let arrayElements = arrayHTML.getElementsByClassName("elem");
   let arrlenght = sortedArray.length;
+  let originalColor = arrayElements[0].style.backgroundColor;
 
   for (let first = 0; first < arrlenght - 1; first++) {
-    for (let second = first + 1; second < arrlenght; second++) {
-      setTimeout(() => {
-        if (sortedArray[second] < sortedArray[first]) {
-          let temp = sortedArray[second];
-          sortedArray[second] = sortedArray[first];
-          arrayElements[second].style.height = sortedArray[first] * 2 + "px";
+    setTimeout(() => {
+      // here first = red
+      arrayElements[first].style.backgroundColor = "red";
+      // setInterval(() => {
+      //   arrayElements[first].style.backgroundColor = "red";
+      // }, 200 * first);
+      for (let second = first + 1; second < arrlenght; second++) {
+
+        setTimeout(() => {
+          // setInterval(() => {
           arrayElements[second].style.backgroundColor = "red";
-          if(arrlenght<12)arrayElements[second].innerHTML = sortedArray[first];
-          sortedArray[first] = temp;
-          arrayElements[first].style.height = temp * 2 + "px";
-          arrayElements[first].style.backgroundColor = "blue";
-          if(arrlenght<12)arrayElements[first].innerHTML = temp;
-        }
-      }, 200 * second)
-    }
+          // }, 200 * second);
+          if (sortedArray[second] < sortedArray[first]) {
+            let temp = sortedArray[second];
+            sortedArray[second] = sortedArray[first];
+
+            arrayElements[second].style.height = sortedArray[first] * 2 + "px";
+            if (arrlenght < 12) arrayElements[second].innerHTML = sortedArray[first];
+
+            sortedArray[first] = temp;
+
+            arrayElements[first].style.height = temp * 2 + "px";
+
+            if (arrlenght < 12) arrayElements[first].innerHTML = temp;
+            // setInterval(() => {
+            arrayElements[second].style.backgroundColor = originalColor;
+            // }, 200 * second);
+          }
+
+        }, 200 * second)
+      }
+      arrayElements[first].style.backgroundColor = originalColor;
+      // setInterval(() => {
+      //   arrayElements[first].style.backgroundColor = originalColor;
+      // }, 200 * first);
+    }, 200 * first);
   }
 }
 
