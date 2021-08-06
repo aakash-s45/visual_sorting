@@ -111,7 +111,7 @@ async function selectionSort() {
 
 // --------------------------------Bubble Sort--------------------------------------
 let arrayBubble=[];
-function bubblesort() {
+async function bubblesort(delay=100) {
   arrayBubble=arr;
 // 3 2 1 5 4
 
@@ -125,6 +125,13 @@ let arrayHTML = document.getElementById("arr");
 
   for (var ft = 0; ft < arrayBubble.length; ft++) {
     for (var st = 0; st < (arrayBubble.length - ft - 1); st++) {
+      arrayElements[st].style.backgroundColor = "darkblue";
+      arrayElements[st+1].style.backgroundColor = "red";
+      await new Promise((resolve) =>
+                setTimeout(() => {
+                    resolve();
+                }, delay)
+            );
       if (arrayBubble[st] > arrayBubble[st + 1]) {
         var temp = arrayBubble[st];
         
@@ -132,8 +139,15 @@ let arrayHTML = document.getElementById("arr");
         arrayElements[st].style.height = arrayBubble[st+1] * 2 + "px";
         arrayBubble[st + 1] = temp;
         arrayElements[st+1].style.height = temp* 2 + "px";
+ 
+
       }
+             arrayElements[st].style.backgroundColor = "pink";
+        arrayElements[st].style.backgroundColor = "pink";
+
     }
+       arrayElements[st].style.backgroundColor = "green";
+
   }
   console.log("Bubble Sort Done!");
 }
