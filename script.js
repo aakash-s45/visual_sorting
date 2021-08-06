@@ -55,11 +55,82 @@ arrayHTML.addEventListener("change", () => {
 })
 
 
-function selectionSort() {
+async function selectionSort() {
   sortedArray = arr;
   let arrayHTML = document.getElementById("arr");
   let arrayElements = arrayHTML.getElementsByClassName("elem");
   let arrlenght = sortedArray.length;
+
+  let min_idx=0;
+  for (let first = 0; first < arrlenght - 1; first++) {
+    arrayElements[first].style.backgroundColor = "darkblue";
+    min_idx = first;
+   
+    for (let second = first + 1; second < arrlenght; second++) {
+      arrayElements[second].style.backgroundColor = "red";
+        
+   
+       var val1 = sortedArray[second];
+        var val2 = sortedArray[min_idx]; 
+        if (val1 < val2) {
+          if (min_idx !== first) {
+    
+            arrayElements[min_idx].style.backgroundColor = "skyblue";    
+ 
+          }
+          min_idx = second;
+        } else {
+    
+          arrayElements[second].style.backgroundColor = "skyblue";
+          
+        }
+        await new Promise((resolve) =>
+        setTimeout(() => {
+          resolve();
+        }, 300)
+      );
+
+        if (sortedArray[second] < sortedArray[first]) {
+          let temp = sortedArray[second];
+          sortedArray[second] = sortedArray[first];
+          arrayElements[second].style.height = sortedArray[first] * 2 + "px";
+          
+          if(arrlenght<12)arrayElements[second].innerHTML = sortedArray[first];
+          sortedArray[first] = temp;
+          arrayElements[first].style.height = temp * 2 + "px";
+          if(arrlenght<12)arrayElements[first].innerHTML = temp;
+          }
+
+
+
+
+
+      }//#2
+    await new Promise((resolve) =>
+        setTimeout(() => {
+          resolve();
+        }, 300)
+      );
+      arrayElements[min_idx].style.backgroundColor = "skyblue";   
+      arrayElements[first].style.backgroundColor = "green";
+      arrayElements[arrlenght-1].style.backgroundColor = "green";
+      
+
+    }//#1
+  console.log("sorting done");
+
+
+
+  }//#funnc
+
+
+
+
+
+
+
+
+
   let originalColor = arrayElements[0].style.backgroundColor;
 
   for (let first = 0; first < arrlenght - 1; first++) {
@@ -101,6 +172,7 @@ function selectionSort() {
     }, 200 * first);
   }
 }
+
 
 console.log("sorting done");
 console.log(sortedArray);
