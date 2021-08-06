@@ -125,7 +125,7 @@ let arrayHTML = document.getElementById("arr");
 
   for (var ft = 0; ft < arrayBubble.length; ft++) {
     for (var st = 0; st < (arrayBubble.length - ft - 1); st++) {
-      arrayElements[st].style.backgroundColor = "red";
+      arrayElements[st].style.backgroundColor = "darkblue";
       arrayElements[st+1].style.backgroundColor = "red";
       await new Promise((resolve) =>
                 setTimeout(() => {
