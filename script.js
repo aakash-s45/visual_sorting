@@ -86,7 +86,7 @@ async function selectionSort() {
         await new Promise((resolve) =>
         setTimeout(() => {
           resolve();
-        }, 300)
+        }, 100)
       );
 
         if (sortedArray[second] < sortedArray[first]) {
@@ -108,7 +108,7 @@ async function selectionSort() {
     await new Promise((resolve) =>
         setTimeout(() => {
           resolve();
-        }, 300)
+        }, 100)
       );
       arrayElements[min_idx].style.backgroundColor = "skyblue";   
       arrayElements[first].style.backgroundColor = "green";
