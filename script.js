@@ -123,14 +123,6 @@ async function selectionSort() {
 
   }//#funnc
 
-
-
-
-
-
-
-
-
   let originalColor = arrayElements[0].style.backgroundColor;
 
   for (let first = 0; first < arrlenght - 1; first++) {
