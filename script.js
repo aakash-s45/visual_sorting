@@ -46,9 +46,14 @@ let generateButton = document.getElementById("genbtn");
 let slideVal = document.getElementById("slider");
 slideVal.addEventListener("change", randomArray);
 
+function disableInput() {
+  document.getElementById("card").style.visibility="visible";
+}
+
 // --------------------------------Selection Sort--------------------------------------
 let sortedArray = [];
 async function selectionSort() {
+  disableInput();
   sortedArray = arr;
   console.log("Starting Selection Sort");
   let arrayHTML = document.getElementById("arr");
@@ -112,6 +117,7 @@ async function selectionSort() {
 // --------------------------------Bubble Sort--------------------------------------
 let arrayBubble = [];
 async function bubblesort(delay = 100) {
+  disableInput();
   arrayBubble = arr;
   // 3 2 1 5 4
 
@@ -156,6 +162,7 @@ var arr_merge = arr;
 var arr_merge_size = arr_merge.length;
 
 function merge(arr_merge, l, m, r) {
+  disableInput();
   var ll = m - l + 1;
   var rl = r - m;
 
@@ -206,13 +213,13 @@ function mergeSort(arr_merge, l, r) {
   if (l >= r) {
     return;
   }
-  counter++;
+  counter+=2;
   var m = l + parseInt((r - l) / 2);
   mergeSort(arr_merge, l, m);
   mergeSort(arr_merge, m + 1, r);
   setTimeout(() => {
     merge(arr_merge, l, m, r);
-  }, 200 * counter);
+  }, 200* counter);
 
 }
 
@@ -223,6 +230,7 @@ function mergeSoting_start() {
 }
 // --------------------------------QuickSort--------------------------------------
 function partition(arr_q, qlow, qhigh) {
+  disableInput();
   let pivot = arr_q[qlow];
   let qi = qlow + 1;
   let qj = qhigh;
@@ -270,6 +278,7 @@ function quicksort(arr_q, qlow, qhigh) {
 }
 
 function quicksort_start() {
+  disableInput();
   let quick_arr = arr;
   quicksort(quick_arr, 0, quick_arr.length - 1);
   console.log("QuickSort Done!");
@@ -278,5 +287,12 @@ function quicksort_start() {
 // var arr_q = [8, 7, 5, 3, 3, 56, 74, 12, 65, 85, 42];
 
 
+// function enableInput(){
+//   let tools=document.getElementById("toolbar");
+//   let inps=tools.getElementsByClassName("dis");
+//   for(let i=0;i<inps.length;i++){
+//     inps[i].disabled=false;
+//   }
+// }
 
 // quicksort(arr_q, 0, arr_q.length - 1);

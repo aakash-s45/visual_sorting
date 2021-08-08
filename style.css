@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap');
+
 *{
   margin: 0;
   padding: 0;
@@ -6,32 +8,75 @@ body{
   overflow: hidden;
 }
 .text{
+  font-family: 'Montserrat', sans-serif;
   color: white;
+  transition: transform 0.2s
 }
 .text:hover{
-  color: rgb(231, 204, 48);
+  color: rgb(233, 54, 99);
 }
-.toolbar {
+.btn:hover{
+  transform: scale(1.1);
+}
+.no-select{
+  user-select: none;
+}
+.card{
+  z-index: 1;
+  position: absolute;
   width: 100vw;
   height: 100px;
-  background-color: rgb(100, 64, 29);
-  box-shadow: 5px 5px 5px rgba(97, 93, 93, 0.397);
+  background-color: #2f3542;
   color: whitesmoke;
-  border-bottom: rgb(26, 23, 20) 10px solid ;
   display: flex;
   align-items: center;
   justify-content: center;
+  visibility: hidden;
+  /* transform: translateY(-100px); */
+  transition: height 0.1s;
+  transition-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1);
+}
+.reload{
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.1s;
+  transition-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1);
+}
+.reload:hover{
+  transform: scale(1.1);
+}
+img{
+  height: 40%;
+  padding: 10px;
+  border: 1px solid rgb(180, 178, 178);
+  border-radius: 12px;
+}
+
+.toolbar {
+  width: 100vw;
+  height: 100px;
+  background-color: #2f3542;
+  /* background-image: linear-gradient(rgb(243, 72, 72), rgb(245, 51, 100),rgb(243, 72, 72)); */
+  color: whitesmoke;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* transition: height 2s;
+  transition-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1); */
 }
 .btn{
+  
   margin: 20px;
   font-size: 16px;
   display: inline-block;
   color: white;
+  padding: 14px;
+  border: 1px solid rgb(180, 178, 178);
+  border-radius: 12px;
   /* cursor: pointer; */
   user-select: none;
-}
-.btn:hover{
-  color:yellow;
 }
 .genbtn{
   transform: scale(1.2);
@@ -49,12 +94,12 @@ body{
 .arr{
     height: 95vh;
     width: 95vw;
-    background-color: rgba(151, 144, 144, 0.5);
+    background-size: 40px 40px;
+    background-color: rgb(247, 243, 243);
+    background-image: radial-gradient(circle, #000000 1px, rgba(0, 0, 0, 0) 1px);
     display: flex;
     flex-direction: row;
     justify-content: center;
-    backdrop-filter: blur(3px);
-    box-shadow: 5px 5px 5px rgba(97, 93, 93, 0.397);
 }
 .elem{
     background-color: rgb(42, 172, 10);
@@ -65,7 +110,7 @@ body{
     margin-top: 0px;
     color: rgb(0, 0, 0);
     font-size: 80%;
-    box-shadow: 10px 10px 10px rgba(97, 93, 93, 0.397);
+    box-shadow: 5px 5px 5px rgba(97, 93, 93, 0.397);
     backdrop-filter: blur(3px);
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
