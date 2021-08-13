@@ -64,6 +64,9 @@ img{
   align-items: center;
   justify-content: center;
 }
+.slider {
+  padding: 5px;
+}
 .btn{
   
   margin: 20px;
