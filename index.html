@@ -14,15 +14,20 @@
 <body>
 
     <header>
-        <div class="card" id="card"><div class="reload no-select" onclick="location.reload();"><img src="images/reload.png" alt="relaod-icon"></div></div>
-        <div id="toolbar" class="toolbar">
-            <div id="genbtn" class="btn text genbtn" onclick="randomArray()">Random Array Generator</div>
-            <div id="slider-div" class="slider text"><input type="range" name="slider" min="2" max="200" value="3" id="slider"></div>
-            <div id="algbtn1" class="btn currentAlgoButton text dis" onclick="mergeSoting_start()">Merge Sort</div>
-            <div id="algbtn2" class="btn algoButton text dis" onclick="bubblesort()">Bubble Sort </div>
-            <div id="algbtn3" class="btn algoButton text dis" onclick="selectionSort(arr)">Selection Sort</div>
-            <div id="algbtn4" class="btn algoButton text dis" onclick="quicksort_start()">QuickSort</div>
+        <div class="card" id="card">
+            <div class="reload no-select" onclick="location.reload();"><img src="images/reload.png" alt="relaod-icon">
+            </div>
         </div>
+        <center>
+            <div id="toolbar" class="toolbar">
+                <div id="genbtn" class="btn text genbtn" onclick="randomArray()">Random Array Generator</div>
+                <div id="slider-div" class="slider text"><input type="range" name="slider" min="2" max="200" value="3"id="slider"></div>
+                <div id="algbtn1" class="btn currentAlgoButton text dis" onclick="mergeSoting_start()">Merge Sort</div>
+                <div id="algbtn2" class="btn algoButton text dis" onclick="bubblesort()">Bubble Sort </div>
+                <div id="algbtn3" class="btn algoButton text dis" onclick="selectionSort(arr)">Selection Sort</div>
+                <div id="algbtn4" class="btn algoButton text dis" onclick="quicksort_start()">QuickSort</div>
+            </div>
+        </center>
     </header>
     <main>
         <center>

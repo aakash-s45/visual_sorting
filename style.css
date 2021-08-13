@@ -57,36 +57,48 @@ img{
   /* height: 100px; */
   background-color: #2f3542;
   color: whitesmoke;
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
-  /* flex-flow: column; */
+  display: grid;
+  grid-template-areas:
+    "a b c d e f";
+  /* grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); */
+  grid-template-columns: repeat(auto-fit);
+  align-content: space-around;
   align-items: center;
-  justify-content: center;
+  justify-content: space-around;
 }
-.slider {
-  padding: 5px;
+#genbtn{
+  max-width: 90px;
+  grid-area: a;
+}
+#slider-div{
+  grid-area: b;
+}
+#algbtn1{
+  grid-area: c;
+}
+#algbtn2{
+  grid-area: d;
+}
+#algbtn3{
+  grid-area: e;
+}
+#algbtn4{
+  grid-area: f;
 }
 .btn{
-  
-  margin: 20px;
+  width: 50p;
   font-size:60%;
-  display: inline-block;
+  /* display: inline-block; */
   color: white;
   padding: 14px;
-  
+  margin: 10px;
   border: 1px solid rgb(180, 178, 178);
   border-radius: 12px;
   /* cursor: pointer; */
   user-select: none;
 }
-.genbtn{
-  transform: scale(1.2);
-}
-
 .arr{
-    height: 95vh;
-    width: 95vw;
+    width: 100%;
     background-size: 40px 40px;
     background-color: rgb(247, 243, 243);
     background-image: radial-gradient(circle, #000000 1px, rgba(0, 0, 0, 0) 1px);
@@ -117,18 +129,23 @@ footer{
 @media screen and (max-width: 700px) {
   body{
     font-size: 7px;
-    overflow: scroll;
+    overflow-x: hidden;
+    overflow-y: scroll;
   }
-  #slider-div{
-    order: -1;
-    display: flex;
+  .toolbar{
+    grid-template-areas:
+    "a a b b"
+    "c d e f";
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(100px, 2fr));
+    /* grid-template-columns: repeat(auto-fit); */
   }
   #slider-div input{
-    padding: 5px;
-    width: 80vw;
+    margin-right: 20px;
   }
   .btn{
     padding: 2%;
+    font-size: 90%;
   }
   
 }

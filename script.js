@@ -1,6 +1,10 @@
+let intViewportWidth = window.innerWidth;
 let arr = [];
 let len = 10;
-
+if(intViewportWidth<700){
+  document.getElementById("slider-div").innerHTML='<input type="range" name="slider" min="2" max="120" value="3"id="slider">'
+}
+console.log(intViewportWidth);
 function slider2len() {
   var slider = document.getElementById("slider");
   slider.oninput = function () {
