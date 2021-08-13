@@ -47,9 +47,9 @@ let slideVal = document.getElementById("slider");
 slideVal.addEventListener("change", randomArray);
 
 function disableInput() {
+  let hit=document.getElementById("toolbar").style.height="100px";
   document.getElementById("card").style.visibility="visible";
 }
-
 // --------------------------------Selection Sort--------------------------------------
 let sortedArray = [];
 async function selectionSort() {

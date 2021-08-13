@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Visual Sorting</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="icon" href="/favicon/favicon.ico">
+    <link rel="icon" href="images/favicon/favicon.ico">
 
 </head>
 
@@ -16,8 +16,8 @@
     <header>
         <div class="card" id="card"><div class="reload no-select" onclick="location.reload();"><img src="images/reload.png" alt="relaod-icon"></div></div>
         <div id="toolbar" class="toolbar">
-            <div id="genbtn" class="btn text" onclick="randomArray()">Random Array Generator</div>
-            <div id="slider-div" class="slider"><input type="range" name="slider" min="2" max="200" value="3" id="slider"></div>
+            <div id="genbtn" class="btn text genbtn" onclick="randomArray()">Random Array Generator</div>
+            <div id="slider-div" class="slider text"><input type="range" name="slider" min="2" max="200" value="3" id="slider"></div>
             <div class="btn currentAlgoButton text dis" onclick="mergeSoting_start()">Merge Sort</div>
             <div class="btn algoButton text dis" onclick="bubblesort()">Bubble Sort </div>
             <div class="btn algoButton text dis" onclick="selectionSort(arr)">Selection Sort</div>
