@@ -99,6 +99,7 @@ img{
 }
 .arr{
     width: 100%;
+    height: 100rem;
     background-size: 40px 40px;
     background-color: rgb(247, 243, 243);
     background-image: radial-gradient(circle, #000000 1px, rgba(0, 0, 0, 0) 1px);
