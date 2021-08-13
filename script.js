@@ -49,6 +49,10 @@ slideVal.addEventListener("change", randomArray);
 function disableInput() {
   let hit=document.getElementById("toolbar").style.height="100px";
   document.getElementById("card").style.visibility="visible";
+  document.getElementById("algbtn1").style.visibility="hidden";
+  document.getElementById("algbtn2").style.visibility="hidden";
+  document.getElementById("algbtn3").style.visibility="hidden";
+  document.getElementById("algbtn4").style.visibility="hidden";
 }
 // --------------------------------Selection Sort--------------------------------------
 let sortedArray = [];
