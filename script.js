@@ -119,6 +119,7 @@ async function selectionSort() {
 
   }//#1
   console.log("Selection Sort Done!");
+  window.alert("Selection Sort Done!");
 
 }//#funnc
 
@@ -164,6 +165,7 @@ async function bubblesort(delay = 100) {
 
   }
   console.log("Bubble Sort Done!");
+  window.alert("Bubble Sort Done!");
 }
 // --------------------------------Merge Sort--------------------------------------
 // function delay(delayInms) {
@@ -271,7 +273,8 @@ const mergeSort = async (arr_merge, l, r) => {
 const mergeSoting_start = async() => {
   arr_merge = arr;
   await mergeSort(arr_merge, 0, arr_merge.length - 1);
-  console.log("Merge Sorting Done!")
+  console.log("Merge Sorting Done!");
+  window.alert("Merge Sorting Done!");
 }
 // --------------------------------QuickSort--------------------------------------
 async function partition(arr_q, qlow, qhigh) {
@@ -370,6 +373,7 @@ const quicksort_start = async() => {
   let quick_arr = arr;
   await quicksort(quick_arr, 0, quick_arr.length - 1);
   console.log("QuickSort Done!");
+  window.alert("QuickSort Done!");
 }
 
 // var arr_q = [8, 7, 5, 3, 3, 56, 74, 12, 65, 85, 42];

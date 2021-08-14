@@ -17,6 +17,7 @@ body{
 }
 .btn:hover{
   transform: scale(1.1);
+  border-color: rgb(233, 54, 99);
 }
 .no-select{
   user-select: none;
@@ -25,7 +26,7 @@ body{
   z-index: 2;
   position: absolute;
   width: 100vw;
-  height: 100px;
+  height: 90px;
   background-color: #2f3542;
   color: whitesmoke;
   display: flex;
@@ -98,7 +99,7 @@ img{
   user-select: none;
 }
 .arr{
-    width: 100%;
+    width: 95%;
     height: 100rem;
     background-size: 40px 40px;
     background-color: rgb(247, 243, 243);
@@ -112,7 +113,6 @@ img{
     display: inline-block;
     text-align: center;
     margin: 1px;
-    /* border: black 2px solid; */
     margin-top: 0px;
     color: rgb(0, 0, 0);
     font-size: 80%;
@@ -120,8 +120,6 @@ img{
     backdrop-filter: blur(3px);
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
-    /* transition: height 2s;
-    transition-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1); */
 }
 footer{
   position: fixed;
@@ -131,7 +129,7 @@ footer{
   body{
     font-size: 7px;
     overflow-x: hidden;
-    overflow-y: scroll;
+    /* overflow-y: auto; */
   }
   .toolbar{
     grid-template-areas:
