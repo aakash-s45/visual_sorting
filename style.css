@@ -111,6 +111,7 @@ background: radial-gradient(circle, rgba(243, 177, 206, 0.521) 50%, rgba(148, 18
     justify-content: center;
 }
 .elem{
+  /* color: rgb(121, 3, 3); */
     background-color: rgb(42, 172, 10);
     display: inline-block;
     text-align: center;
@@ -123,6 +124,7 @@ background: radial-gradient(circle, rgba(243, 177, 206, 0.521) 50%, rgba(148, 18
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
 }
+
 footer{
   position: fixed;
   bottom: 84px;

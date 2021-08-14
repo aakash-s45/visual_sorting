@@ -82,7 +82,7 @@ async function selectionSort() {
     min_idx = first;
 
     for (let second = first + 1; second < arrlenght; second++) {
-      arrayElements[second].style.backgroundColor = "red";
+      arrayElements[second].style.backgroundColor = "rgb(121, 3, 3)";
 
 
       var val1 = sortedArray[second];
@@ -114,7 +114,7 @@ async function selectionSort() {
         arrayElements[first].style.height = temp * 2 + "px";
         if (arrlenght < 12) arrayElements[first].innerHTML = temp;
       }
-      arrayElements[second].style.backgroundColor = "red";
+      arrayElements[second].style.backgroundColor = "rgb(121, 3, 3)";
 
       await new Promise((resolve) =>
         setTimeout(() => {
