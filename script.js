@@ -1,18 +1,20 @@
 let arr = [];
 let len = 10;
+let intViewportWidth=window.innerWidth;
 let delaytime = 180;
-if(intViewportWidth<700){
-  document.getElementById("slider-div").innerHTML='<input type="range" name="slider" min="2" max="120" value="3"id="slider">'
+if (intViewportWidth < 700) {
+  document.getElementById("slider-div").innerHTML = '<input type="range" name="slider" min="2" max="120" value="3"id="slider">'
 }
 console.log(intViewportWidth);
 function slider2len() {
   var slider = document.getElementById("slider");
   slider.oninput = function () {
     len = this.value;
-    if(len<100){
-     delaytime = (150-len)*10;}
-    else{
-      delaytime = (210-len);
+    if (len < 100) {
+      delaytime = (150 - len) * 10;
+    }
+    else {
+      delaytime = (210 - len);
     }
     console.log(len);
   }
@@ -56,7 +58,7 @@ let slideVal = document.getElementById("slider");
 slideVal.addEventListener("change", randomArray);
 
 function disableInput() {
-  document.getElementById("card").style.visibility="visible";
+  document.getElementById("card").style.visibility = "visible";
 }
 
 // --------------------------------Selection Sort--------------------------------------
@@ -202,42 +204,42 @@ async function merge(arr_merge, l, m, r) {
 
     if (L[code1] <= R[code2]) {
 
-      arrayElements[l+code1].style.backgroundColor = "red";
-      arrayElements[m+1+code2].style.backgroundColor = "blue";
+      arrayElements[l + code1].style.backgroundColor = "red";
+      arrayElements[m + 1 + code2].style.backgroundColor = "blue";
       await new Promise((resolve) =>
         setTimeout(() => {
           resolve();
         }, parseInt(delaytime))
       );
-    
+
       arr_merge[code3] = L[code1];
       arrayElements[code3].style.height = L[code1] * 2 + "px";
-     
-    arrayElements[l+code1].style.backgroundColor = "green";
-      arrayElements[m+1+code2].style.backgroundColor = "green";
+
+      arrayElements[l + code1].style.backgroundColor = "green";
+      arrayElements[m + 1 + code2].style.backgroundColor = "green";
       code1++;
     }
     else {
 
-     arrayElements[l+code1].style.backgroundColor = "red";
-      arrayElements[m+1+code2].style.backgroundColor = "blue";
+      arrayElements[l + code1].style.backgroundColor = "red";
+      arrayElements[m + 1 + code2].style.backgroundColor = "blue";
       arr_merge[code3] = R[code2];
       arrayElements[code3].style.height = R[code2] * 2 + "px";
-       arrayElements[l+code1].style.backgroundColor = "green";
-      arrayElements[m+1+code2].style.backgroundColor = "green";
+      arrayElements[l + code1].style.backgroundColor = "green";
+      arrayElements[m + 1 + code2].style.backgroundColor = "green";
       code2++;
     }
-    
+
     code3++;
   }
   while (code1 < ll) {
     arr_merge[code3] = L[code1];
 
-      // arrayElements[m+1+code2].style.backgroundColor = "pink";
+    // arrayElements[m+1+code2].style.backgroundColor = "pink";
     arrayElements[code3].style.height = L[code1] * 2 + "px";
 
-      // arrayElements[m+1+code2].style.backgroundColor = "green";
-  
+    // arrayElements[m+1+code2].style.backgroundColor = "green";
+
     code1++;
     code3++;
   }
@@ -246,13 +248,13 @@ async function merge(arr_merge, l, m, r) {
     // arrayElements[l+code1].style.backgroundColor = "pink";
 
     arrayElements[code3].style.height = R[code2] * 2 + "px";
-        // arrayElements[l+code1].style.backgroundColor = "green";
+    // arrayElements[l+code1].style.backgroundColor = "green";
     code2++;
     code3++;
   }
 }
 function timeout(ms) {
-    return new Promise(resolve => setTimeout(resolve, ms));
+  return new Promise(resolve => setTimeout(resolve, ms));
 }
 
 let counter = 0;
@@ -260,16 +262,16 @@ const mergeSort = async (arr_merge, l, r) => {
   if (l >= r) {
     return;
   }
-  counter+=2;
+  counter += 2;
   var m = l + parseInt((r - l) / 2);
   await mergeSort(arr_merge, l, m);
   await mergeSort(arr_merge, m + 1, r);
   await merge(arr_merge, l, m, r);
-  
-  await timeout(parseInt(delaytime*10));
+
+  await timeout(parseInt(delaytime * 10));
 }
 
-const mergeSoting_start = async() => {
+const mergeSoting_start = async () => {
   arr_merge = arr;
   await mergeSort(arr_merge, 0, arr_merge.length - 1);
   console.log("Merge Sorting Done!")
@@ -277,7 +279,7 @@ const mergeSoting_start = async() => {
 // --------------------------------QuickSort--------------------------------------
 async function partition(arr_q, qlow, qhigh) {
   disableInput();
- let arrayHTML = document.getElementById("arr");
+  let arrayHTML = document.getElementById("arr");
   let arrayElements = arrayHTML.getElementsByClassName("elem");
 
   arrayElements[qlow].style.backgroundColor = "red";
@@ -286,33 +288,34 @@ async function partition(arr_q, qlow, qhigh) {
   let qj = qhigh;
   let qtemp;
 
-  
+
   do {
     while (arr_q[qi] <= pivot) {
 
-  arrayElements[qi].style.backgroundColor = "yellow";
-  await new Promise((resolve) =>
+      arrayElements[qi].style.backgroundColor = "yellow";
+      await new Promise((resolve) =>
         setTimeout(() => {
           resolve();
         }, parseInt(delaytime))
       );
 
-  arrayElements[qi].style.backgroundColor = "rgb(42, 172, 10)";
+      arrayElements[qi].style.backgroundColor = "rgb(42, 172, 10)";
       qi++;
 
 
     }
-    if(qi<qhigh){
-    arrayElements[qi].style.backgroundColor = "yellow";}
+    if (qi < qhigh) {
+      arrayElements[qi].style.backgroundColor = "yellow";
+    }
     while (arr_q[qj] > pivot) {
-        arrayElements[qj].style.backgroundColor = "orange";
-  await new Promise((resolve) =>
+      arrayElements[qj].style.backgroundColor = "orange";
+      await new Promise((resolve) =>
         setTimeout(() => {
           resolve();
         }, parseInt(delaytime))
       );
 
-  arrayElements[qj].style.backgroundColor = "rgb(42, 172, 10)";
+      arrayElements[qj].style.backgroundColor = "rgb(42, 172, 10)";
       qj--;
     }
     arrayElements[qj].style.backgroundColor = "orange";
@@ -323,15 +326,15 @@ async function partition(arr_q, qlow, qhigh) {
       arr_q[qj] = qtemp;
       arrayElements[qj].style.height = qtemp * 2 + "px";
     }
-  }while (qj > qi);
-  if(qi<qhigh){arrayElements[qi].style.backgroundColor = "rgb(42, 172, 10)";}
-        arrayElements[qj].style.backgroundColor = "rgb(42, 172, 10)";
-arrayElements[qlow].style.backgroundColor = "rgb(42, 172, 10)";
-    await new Promise((resolve) =>
-        setTimeout(() => {
-          resolve();
-        }, parseInt(delaytime))
-      );
+  } while (qj > qi);
+  if (qi < qhigh) { arrayElements[qi].style.backgroundColor = "rgb(42, 172, 10)"; }
+  arrayElements[qj].style.backgroundColor = "rgb(42, 172, 10)";
+  arrayElements[qlow].style.backgroundColor = "rgb(42, 172, 10)";
+  await new Promise((resolve) =>
+    setTimeout(() => {
+      resolve();
+    }, parseInt(delaytime))
+  );
   qtemp = arr_q[qlow];
 
   arr_q[qlow] = arr_q[qj];
@@ -339,34 +342,34 @@ arrayElements[qlow].style.backgroundColor = "rgb(42, 172, 10)";
   arr_q[qj] = qtemp;
   arrayElements[qj].style.height = qtemp * 2 + "px";
   arrayElements[qj].style.backgroundColor = "rgb(42, 172, 10)";
-    await new Promise((resolve) =>
-        setTimeout(() => {
-          resolve();
-        }, parseInt(delaytime))
-      );
+  await new Promise((resolve) =>
+    setTimeout(() => {
+      resolve();
+    }, parseInt(delaytime))
+  );
   return qj;
 }
 function timeout(ms) {
-    return new Promise(resolve => setTimeout(resolve, ms));
+  return new Promise(resolve => setTimeout(resolve, ms));
 }
 
 
 
 let quick_count = 0;
-const quicksort = async(arr_q, qlow, qhigh) => {
+const quicksort = async (arr_q, qlow, qhigh) => {
   let partitionInd;
   quick_count++;
   if (qlow < qhigh) {
     partitionInd = await partition(arr_q, qlow, qhigh);
 
 
-      await quicksort(arr_q, qlow, partitionInd - 1);
-      await quicksort(arr_q, partitionInd + 1, qhigh);
-   await timeout(parseInt(delaytime));
+    await quicksort(arr_q, qlow, partitionInd - 1);
+    await quicksort(arr_q, partitionInd + 1, qhigh);
+    await timeout(parseInt(delaytime));
   }
 }
 
-const quicksort_start = async() => {
+const quicksort_start = async () => {
   disableInput();
   let quick_arr = arr;
   await quicksort(quick_arr, 0, quick_arr.length - 1);
