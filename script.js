@@ -1,7 +1,7 @@
 let arr = [];
 let len = 10;
 let intViewportWidth=window.innerWidth;
-let delaytime = 180;
+let delaytime = 150;
 if (intViewportWidth < 700) {
   document.getElementById("slider-div").innerHTML = '<input type="range" name="slider" min="2" max="120" value="3"id="slider">'
 }
@@ -169,13 +169,7 @@ async function bubblesort() {
   console.log("Bubble Sort Done!");
 }
 // --------------------------------Merge Sort--------------------------------------
-// function delay(delayInms) {
-//   return new Promise(resolve => {
-//     setTimeout(() => {
-//       resolve(2);
-//     }, delayInms);
-//   });
-// }
+
 var arr_merge = arr;
 var arr_merge_size = arr_merge.length;
 
@@ -235,20 +229,14 @@ async function merge(arr_merge, l, m, r) {
   while (code1 < ll) {
     arr_merge[code3] = L[code1];
 
-    // arrayElements[m+1+code2].style.backgroundColor = "pink";
     arrayElements[code3].style.height = L[code1] * 2 + "px";
-
-    // arrayElements[m+1+code2].style.backgroundColor = "green";
 
     code1++;
     code3++;
   }
   while (code2 < rl) {
-    arr_merge[code3] = R[code2]
-    // arrayElements[l+code1].style.backgroundColor = "pink";
-
+    arr_merge[code3] = R[code2];
     arrayElements[code3].style.height = R[code2] * 2 + "px";
-    // arrayElements[l+code1].style.backgroundColor = "green";
     code2++;
     code3++;
   }
@@ -268,7 +256,7 @@ const mergeSort = async (arr_merge, l, r) => {
   await mergeSort(arr_merge, m + 1, r);
   await merge(arr_merge, l, m, r);
 
-  await timeout(parseInt(delaytime * 10));
+  await timeout(parseInt(delaytime));
 }
 
 const mergeSoting_start = async () => {
