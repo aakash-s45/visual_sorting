@@ -1,6 +1,7 @@
 let intViewportWidth = window.innerWidth;
 let arr = [];
 let len = 10;
+let delaytime = 180;
 if(intViewportWidth<700){
   document.getElementById("slider-div").innerHTML='<input type="range" name="slider" min="2" max="120" value="3"id="slider">'
 }
@@ -9,6 +10,11 @@ function slider2len() {
   var slider = document.getElementById("slider");
   slider.oninput = function () {
     len = this.value;
+    if(len<100){
+     delaytime = (150-len)*10;}
+    else{
+      delaytime = (210-len);
+    }
     console.log(len);
   }
 }
@@ -94,7 +100,7 @@ async function selectionSort() {
       await new Promise((resolve) =>
         setTimeout(() => {
           resolve();
-        }, 50)
+        }, delaytime)
       );
 
       if (sortedArray[second] < sortedArray[first]) {
@@ -111,7 +117,7 @@ async function selectionSort() {
     await new Promise((resolve) =>
       setTimeout(() => {
         resolve();
-      }, 50)
+      }, delaytime)
     );
     arrayElements[min_idx].style.backgroundColor = "skyblue";
     arrayElements[first].style.backgroundColor = "green";
@@ -145,7 +151,7 @@ async function bubblesort(delay = 100) {
       await new Promise((resolve) =>
         setTimeout(() => {
           resolve();
-        }, delay)
+        }, delaytime)
       );
       if (arrayBubble[st] > arrayBubble[st + 1]) {
         var temp = arrayBubble[st];
@@ -208,7 +214,7 @@ async function merge(arr_merge, l, m, r) {
       await new Promise((resolve) =>
         setTimeout(() => {
           resolve();
-        }, 500)
+        }, delaytime)
       );
     
       arr_merge[code3] = L[code1];
@@ -267,7 +273,7 @@ const mergeSort = async (arr_merge, l, r) => {
   await mergeSort(arr_merge, m + 1, r);
   await merge(arr_merge, l, m, r);
   
-  await timeout(800);
+  await timeout(delaytime);
 }
 
 const mergeSoting_start = async() => {
@@ -296,7 +302,7 @@ async function partition(arr_q, qlow, qhigh) {
   await new Promise((resolve) =>
         setTimeout(() => {
           resolve();
-        }, 50)
+        }, delaytime)
       );
 
   arrayElements[qi].style.backgroundColor = "rgb(42, 172, 10)";
@@ -311,13 +317,13 @@ async function partition(arr_q, qlow, qhigh) {
   await new Promise((resolve) =>
         setTimeout(() => {
           resolve();
-        }, 50)
+        }, delaytime)
       );
 
   arrayElements[qj].style.backgroundColor = "rgb(42, 172, 10)";
       qj--;
     }
-            arrayElements[qj].style.backgroundColor = "orange";
+    arrayElements[qj].style.backgroundColor = "orange";
     if (qi < qj) {
       qtemp = arr_q[qi];
       arr_q[qi] = arr_q[qj];
@@ -332,7 +338,7 @@ arrayElements[qlow].style.backgroundColor = "rgb(42, 172, 10)";
     await new Promise((resolve) =>
         setTimeout(() => {
           resolve();
-        }, 50)
+        }, delaytime)
       );
   qtemp = arr_q[qlow];
 
@@ -344,7 +350,7 @@ arrayElements[qlow].style.backgroundColor = "rgb(42, 172, 10)";
     await new Promise((resolve) =>
         setTimeout(() => {
           resolve();
-        }, 50)
+        }, delaytime)
       );
   return qj;
 }
@@ -364,7 +370,7 @@ const quicksort = async(arr_q, qlow, qhigh) => {
 
       await quicksort(arr_q, qlow, partitionInd - 1);
       await quicksort(arr_q, partitionInd + 1, qhigh);
-   await timeout(800);
+   await timeout(delaytime);
   }
 }
 
@@ -375,16 +381,3 @@ const quicksort_start = async() => {
   console.log("QuickSort Done!");
   window.alert("QuickSort Done!");
 }
-
-// var arr_q = [8, 7, 5, 3, 3, 56, 74, 12, 65, 85, 42];
-
-
-// function enableInput(){
-//   let tools=document.getElementById("toolbar");
-//   let inps=tools.getElementsByClassName("dis");
-//   for(let i=0;i<inps.length;i++){
-//     inps[i].disabled=false;
-//   }
-// }
-
-// quicksort(arr_q, 0, arr_q.length - 1);
