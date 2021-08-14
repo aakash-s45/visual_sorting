@@ -3,13 +3,15 @@ let len = 10;
 console.log("Deepak ko Top coder Bolte !");
 let intViewportWidth = window.innerWidth;
 let delaytime = 150;
+let multi=2;
 if (intViewportWidth < 700) {
-  document.getElementById("slider-div").innerHTML = '<input type="range" name="slider" min="4" max="110" value="3"id="slider">'
+  document.getElementById("slider-div").innerHTML = '<input type="range" name="slider" min="4" max="110" value="3"id="slider">';
+  multi=1.8
 }
 if (intViewportWidth > 700 && intViewportWidth < 1200) {
   document.getElementById("slider-div").innerHTML = '<input type="range" name="slider" min="4" max="150" value="3"id="slider">'
 }
-console.log(intViewportWidth);
+// console.log(intViewportWidth);
 function slider2len() {
   var slider = document.getElementById("slider");
   slider.oninput = function () {
@@ -41,8 +43,8 @@ function randomArray() {
   let b = window.innerWidth;
   let wid = 0.7 * b / len;
   for (let i = 0; i < arr.length; i++) {
-    if(intViewportWidth<800 )pag.innerHTML += "<div class='elem' style='height:" + arr[i]*1.8 + "px'>" + "</div>";
-    else pag.innerHTML += "<div class='elem' style='height:" + arr[i] * 2 + "px'>" + "</div>";
+    if(intViewportWidth<800 )pag.innerHTML += "<div class='elem' style='height:" + arr[i]* multi + "px'>" + "</div>";
+    else pag.innerHTML += "<div class='elem' style='height:" + arr[i] * multi + "px'>" + "</div>";
   }
   let x = document.getElementById("arr");
   let y = x.getElementsByClassName("elem");
@@ -108,10 +110,10 @@ async function selectionSort() {
       if (sortedArray[second] < sortedArray[first]) {
         let temp = sortedArray[second];
         sortedArray[second] = sortedArray[first];
-        arrayElements[second].style.height = sortedArray[first] * 2 + "px";
+        arrayElements[second].style.height = sortedArray[first] * multi + "px";
         if (arrlenght < 12) arrayElements[second].innerHTML = sortedArray[first];
         sortedArray[first] = temp;
-        arrayElements[first].style.height = temp * 2 + "px";
+        arrayElements[first].style.height = temp * multi + "px";
         if (arrlenght < 12) arrayElements[first].innerHTML = temp;
       }
       arrayElements[second].style.backgroundColor = "rgb(121, 3, 3)";
@@ -172,9 +174,9 @@ async function bubblesort() {
         var temp = arrayBubble[st];
 
         arrayBubble[st] = arrayBubble[st + 1];
-        arrayElements[st].style.height = arrayBubble[st + 1] * 2 + "px";
+        arrayElements[st].style.height = arrayBubble[st + 1] * multi + "px";
         arrayBubble[st + 1] = temp;
-        arrayElements[st + 1].style.height = temp * 2 + "px";
+        arrayElements[st + 1].style.height = temp * multi + "px";
 
 
       }
@@ -186,6 +188,8 @@ async function bubblesort() {
 
   }
   console.log("Bubble Sort Done!");
+  console.log(arrayBubble);
+
   await new Promise((resolve) =>
         setTimeout(() => {
           resolve();
@@ -232,7 +236,7 @@ async function merge(arr_merge, l, m, r) {
       );
 
       arr_merge[code3] = L[code1];
-      arrayElements[code3].style.height = L[code1] * 2 + "px";
+      arrayElements[code3].style.height = L[code1] * multi + "px";
 
       arrayElements[l + code1].style.backgroundColor = "green";
       arrayElements[m + 1 + code2].style.backgroundColor = "green";
@@ -243,7 +247,7 @@ async function merge(arr_merge, l, m, r) {
       arrayElements[l + code1].style.backgroundColor = "rgb(121, 3, 3)";
       arrayElements[m + 1 + code2].style.backgroundColor = "blue";
       arr_merge[code3] = R[code2];
-      arrayElements[code3].style.height = R[code2] * 2 + "px";
+      arrayElements[code3].style.height = R[code2] * multi + "px";
       arrayElements[l + code1].style.backgroundColor = "green";
       arrayElements[m + 1 + code2].style.backgroundColor = "green";
       code2++;
@@ -254,14 +258,14 @@ async function merge(arr_merge, l, m, r) {
   while (code1 < ll) {
     arr_merge[code3] = L[code1];
 
-    arrayElements[code3].style.height = L[code1] * 2 + "px";
+    arrayElements[code3].style.height = L[code1] * multi + "px";
 
     code1++;
     code3++;
   }
   while (code2 < rl) {
     arr_merge[code3] = R[code2];
-    arrayElements[code3].style.height = R[code2] * 2 + "px";
+    arrayElements[code3].style.height = R[code2] * multi + "px";
     code2++;
     code3++;
   }
@@ -341,9 +345,9 @@ async function partition(arr_q, qlow, qhigh) {
     if (qi < qj) {
       qtemp = arr_q[qi];
       arr_q[qi] = arr_q[qj];
-      arrayElements[qi].style.height = arr_q[qj] * 2 + "px";
+      arrayElements[qi].style.height = arr_q[qj] * multi + "px";
       arr_q[qj] = qtemp;
-      arrayElements[qj].style.height = qtemp * 2 + "px";
+      arrayElements[qj].style.height = qtemp * multi + "px";
     }
   } while (qj > qi);
   if (qi < qhigh) { arrayElements[qi].style.backgroundColor = "rgb(42, 172, 10)"; }
@@ -357,9 +361,9 @@ async function partition(arr_q, qlow, qhigh) {
   qtemp = arr_q[qlow];
 
   arr_q[qlow] = arr_q[qj];
-  arrayElements[qlow].style.height = arr_q[qj] * 2 + "px";
+  arrayElements[qlow].style.height = arr_q[qj] * multi + "px";
   arr_q[qj] = qtemp;
-  arrayElements[qj].style.height = qtemp * 2 + "px";
+  arrayElements[qj].style.height = qtemp * multi + "px";
   arrayElements[qj].style.backgroundColor = "rgb(42, 172, 10)";
   await new Promise((resolve) =>
     setTimeout(() => {
