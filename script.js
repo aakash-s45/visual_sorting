@@ -1,21 +1,25 @@
 let arr = [];
 let len = 10;
-let intViewportWidth=window.innerWidth;
+console.log("Deepak ko Top coder Bolte !");
+let intViewportWidth = window.innerWidth;
 let delaytime = 150;
 if (intViewportWidth < 700) {
-  document.getElementById("slider-div").innerHTML = '<input type="range" name="slider" min="2" max="120" value="3"id="slider">'
+  document.getElementById("slider-div").innerHTML = '<input type="range" name="slider" min="4" max="110" value="3"id="slider">'
+}
+if (intViewportWidth > 700 && intViewportWidth < 1200) {
+  document.getElementById("slider-div").innerHTML = '<input type="range" name="slider" min="4" max="150" value="3"id="slider">'
 }
 console.log(intViewportWidth);
 function slider2len() {
   var slider = document.getElementById("slider");
   slider.oninput = function () {
     len = this.value;
-    if (len < 100) {
-      delaytime = (150 - len) * 10;
-    }
-    else {
-      delaytime = (210 - len);
-    }
+
+    if (len <= 10) delaytime = 150;
+    else if(len>10 && len<=50)delaytime=20;
+    else if(len>50 && len<=75)delaytime=3;
+    else if(len>75 && len<=125)delaytime=1;
+    else if(len>125 && len<=200)delaytime=0.1;
     console.log(len);
   }
 }
@@ -37,7 +41,8 @@ function randomArray() {
   let b = window.innerWidth;
   let wid = 0.7 * b / len;
   for (let i = 0; i < arr.length; i++) {
-    pag.innerHTML += "<div class='elem' style='height:" + arr[i] * 2 + "px'>" + "</div>";
+    if(intViewportWidth<800 )pag.innerHTML += "<div class='elem' style='height:" + arr[i]*1.8 + "px'>" + "</div>";
+    else pag.innerHTML += "<div class='elem' style='height:" + arr[i] * 2 + "px'>" + "</div>";
   }
   let x = document.getElementById("arr");
   let y = x.getElementsByClassName("elem");
@@ -85,19 +90,19 @@ async function selectionSort() {
       if (val1 < val2) {
         if (min_idx !== first) {
 
-          arrayElements[min_idx].style.backgroundColor = "skyblue";
+          arrayElements[min_idx].style.backgroundColor = "rgb(250, 103, 128)"
 
         }
         min_idx = second;
       } else {
 
-        arrayElements[second].style.backgroundColor = "skyblue";
+        arrayElements[second].style.backgroundColor = "rgb(250, 103, 128)"
 
       }
       await new Promise((resolve) =>
         setTimeout(() => {
           resolve();
-        }, parseInt(delaytime))
+        }, parseInt(delaytime-6))
       );
 
       if (sortedArray[second] < sortedArray[first]) {
@@ -109,19 +114,28 @@ async function selectionSort() {
         arrayElements[first].style.height = temp * 2 + "px";
         if (arrlenght < 12) arrayElements[first].innerHTML = temp;
       }
+      arrayElements[second].style.backgroundColor = "red";
 
+      await new Promise((resolve) =>
+        setTimeout(() => {
+          resolve();
+        }, parseInt(delaytime-6))
+      );
+
+      arrayElements[second].style.backgroundColor = "rgb(250, 103, 128)"
     }//#2
     await new Promise((resolve) =>
       setTimeout(() => {
         resolve();
-      }, parseInt(delaytime))
+      }, parseInt(delaytime-6))
     );
-    arrayElements[min_idx].style.backgroundColor = "skyblue";
+    arrayElements[min_idx].style.backgroundColor = "rgb(250, 103, 128)"
     arrayElements[first].style.backgroundColor = "green";
     arrayElements[arrlenght - 1].style.backgroundColor = "green";
 
   }//#1
   console.log("Selection Sort Done!");
+  window.alert("Selection Sort Done!");
 
 }//#funnc
 
@@ -159,14 +173,15 @@ async function bubblesort() {
 
 
       }
-      arrayElements[st].style.backgroundColor = "pink";
-      arrayElements[st].style.backgroundColor = "pink";
+      arrayElements[st].style.backgroundColor = "rgb(250, 103, 128)";
+      arrayElements[st].style.backgroundColor = "rgb(250, 103, 128)";
 
     }
     arrayElements[st].style.backgroundColor = "green";
 
   }
   console.log("Bubble Sort Done!");
+  window.alert("Bubble Sort Done!");
 }
 // --------------------------------Merge Sort--------------------------------------
 
@@ -203,7 +218,7 @@ async function merge(arr_merge, l, m, r) {
       await new Promise((resolve) =>
         setTimeout(() => {
           resolve();
-        }, parseInt(delaytime))
+        }, parseInt(delaytime+10))
       );
 
       arr_merge[code3] = L[code1];
@@ -256,13 +271,14 @@ const mergeSort = async (arr_merge, l, r) => {
   await mergeSort(arr_merge, m + 1, r);
   await merge(arr_merge, l, m, r);
 
-  await timeout(parseInt(delaytime));
+  await timeout(parseInt(delaytime+10));
 }
 
 const mergeSoting_start = async () => {
   arr_merge = arr;
   await mergeSort(arr_merge, 0, arr_merge.length - 1);
-  console.log("Merge Sorting Done!")
+  console.log("Merge Sorting Done!");
+  window.alert("Merge Sorting Done!");
 }
 // --------------------------------QuickSort--------------------------------------
 async function partition(arr_q, qlow, qhigh) {
@@ -362,4 +378,5 @@ const quicksort_start = async () => {
   let quick_arr = arr;
   await quicksort(quick_arr, 0, quick_arr.length - 1);
   console.log("QuickSort Done!");
+  window.alert("QuickSort Done!");
 }
