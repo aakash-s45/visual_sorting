@@ -1,4 +1,3 @@
-let intViewportWidth = window.innerWidth;
 let arr = [];
 let len = 10;
 let delaytime = 180;
@@ -57,13 +56,9 @@ let slideVal = document.getElementById("slider");
 slideVal.addEventListener("change", randomArray);
 
 function disableInput() {
-  let hit=document.getElementById("toolbar").style.height="100px";
   document.getElementById("card").style.visibility="visible";
-  document.getElementById("algbtn1").style.visibility="hidden";
-  document.getElementById("algbtn2").style.visibility="hidden";
-  document.getElementById("algbtn3").style.visibility="hidden";
-  document.getElementById("algbtn4").style.visibility="hidden";
 }
+
 // --------------------------------Selection Sort--------------------------------------
 let sortedArray = [];
 async function selectionSort() {
@@ -100,7 +95,7 @@ async function selectionSort() {
       await new Promise((resolve) =>
         setTimeout(() => {
           resolve();
-        }, delaytime)
+        }, parseInt(delaytime))
       );
 
       if (sortedArray[second] < sortedArray[first]) {
@@ -117,7 +112,7 @@ async function selectionSort() {
     await new Promise((resolve) =>
       setTimeout(() => {
         resolve();
-      }, delaytime)
+      }, parseInt(delaytime))
     );
     arrayElements[min_idx].style.backgroundColor = "skyblue";
     arrayElements[first].style.backgroundColor = "green";
@@ -125,13 +120,12 @@ async function selectionSort() {
 
   }//#1
   console.log("Selection Sort Done!");
-  window.alert("Selection Sort Done!");
 
 }//#funnc
 
 // --------------------------------Bubble Sort--------------------------------------
 let arrayBubble = [];
-async function bubblesort(delay = 100) {
+async function bubblesort() {
   disableInput();
   arrayBubble = arr;
   // 3 2 1 5 4
@@ -151,7 +145,7 @@ async function bubblesort(delay = 100) {
       await new Promise((resolve) =>
         setTimeout(() => {
           resolve();
-        }, delaytime)
+        }, parseInt(delaytime))
       );
       if (arrayBubble[st] > arrayBubble[st + 1]) {
         var temp = arrayBubble[st];
@@ -171,7 +165,6 @@ async function bubblesort(delay = 100) {
 
   }
   console.log("Bubble Sort Done!");
-  window.alert("Bubble Sort Done!");
 }
 // --------------------------------Merge Sort--------------------------------------
 // function delay(delayInms) {
@@ -214,7 +207,7 @@ async function merge(arr_merge, l, m, r) {
       await new Promise((resolve) =>
         setTimeout(() => {
           resolve();
-        }, delaytime)
+        }, parseInt(delaytime))
       );
     
       arr_merge[code3] = L[code1];
@@ -273,14 +266,13 @@ const mergeSort = async (arr_merge, l, r) => {
   await mergeSort(arr_merge, m + 1, r);
   await merge(arr_merge, l, m, r);
   
-  await timeout(delaytime);
+  await timeout(parseInt(delaytime*10));
 }
 
 const mergeSoting_start = async() => {
   arr_merge = arr;
   await mergeSort(arr_merge, 0, arr_merge.length - 1);
-  console.log("Merge Sorting Done!");
-  window.alert("Merge Sorting Done!");
+  console.log("Merge Sorting Done!")
 }
 // --------------------------------QuickSort--------------------------------------
 async function partition(arr_q, qlow, qhigh) {
@@ -302,7 +294,7 @@ async function partition(arr_q, qlow, qhigh) {
   await new Promise((resolve) =>
         setTimeout(() => {
           resolve();
-        }, delaytime)
+        }, parseInt(delaytime))
       );
 
   arrayElements[qi].style.backgroundColor = "rgb(42, 172, 10)";
@@ -317,7 +309,7 @@ async function partition(arr_q, qlow, qhigh) {
   await new Promise((resolve) =>
         setTimeout(() => {
           resolve();
-        }, delaytime)
+        }, parseInt(delaytime))
       );
 
   arrayElements[qj].style.backgroundColor = "rgb(42, 172, 10)";
@@ -338,7 +330,7 @@ arrayElements[qlow].style.backgroundColor = "rgb(42, 172, 10)";
     await new Promise((resolve) =>
         setTimeout(() => {
           resolve();
-        }, delaytime)
+        }, parseInt(delaytime))
       );
   qtemp = arr_q[qlow];
 
@@ -350,7 +342,7 @@ arrayElements[qlow].style.backgroundColor = "rgb(42, 172, 10)";
     await new Promise((resolve) =>
         setTimeout(() => {
           resolve();
-        }, delaytime)
+        }, parseInt(delaytime))
       );
   return qj;
 }
@@ -370,7 +362,7 @@ const quicksort = async(arr_q, qlow, qhigh) => {
 
       await quicksort(arr_q, qlow, partitionInd - 1);
       await quicksort(arr_q, partitionInd + 1, qhigh);
-   await timeout(delaytime);
+   await timeout(parseInt(delaytime));
   }
 }
 
@@ -379,5 +371,4 @@ const quicksort_start = async() => {
   let quick_arr = arr;
   await quicksort(quick_arr, 0, quick_arr.length - 1);
   console.log("QuickSort Done!");
-  window.alert("QuickSort Done!");
 }
