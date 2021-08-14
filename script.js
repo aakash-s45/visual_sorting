@@ -135,6 +135,11 @@ async function selectionSort() {
 
   }//#1
   console.log("Selection Sort Done!");
+  await new Promise((resolve) =>
+        setTimeout(() => {
+          resolve();
+        }, parseInt(50))
+      );
   window.alert("Selection Sort Done!");
 
 }//#funnc
@@ -157,7 +162,7 @@ async function bubblesort() {
   for (var ft = 0; ft < arrayBubble.length; ft++) {
     for (var st = 0; st < (arrayBubble.length - ft - 1); st++) {
       arrayElements[st].style.backgroundColor = "darkblue";
-      arrayElements[st + 1].style.backgroundColor = "red";
+      arrayElements[st + 1].style.backgroundColor = "rgb(121, 3, 3)";
       await new Promise((resolve) =>
         setTimeout(() => {
           resolve();
@@ -181,6 +186,11 @@ async function bubblesort() {
 
   }
   console.log("Bubble Sort Done!");
+  await new Promise((resolve) =>
+        setTimeout(() => {
+          resolve();
+        }, parseInt(50))
+      );
   window.alert("Bubble Sort Done!");
 }
 // --------------------------------Merge Sort--------------------------------------
@@ -213,7 +223,7 @@ async function merge(arr_merge, l, m, r) {
 
     if (L[code1] <= R[code2]) {
 
-      arrayElements[l + code1].style.backgroundColor = "red";
+      arrayElements[l + code1].style.backgroundColor = "rgb(121, 3, 3)";
       arrayElements[m + 1 + code2].style.backgroundColor = "blue";
       await new Promise((resolve) =>
         setTimeout(() => {
@@ -230,7 +240,7 @@ async function merge(arr_merge, l, m, r) {
     }
     else {
 
-      arrayElements[l + code1].style.backgroundColor = "red";
+      arrayElements[l + code1].style.backgroundColor = "rgb(121, 3, 3)";
       arrayElements[m + 1 + code2].style.backgroundColor = "blue";
       arr_merge[code3] = R[code2];
       arrayElements[code3].style.height = R[code2] * 2 + "px";
@@ -278,6 +288,11 @@ const mergeSoting_start = async () => {
   arr_merge = arr;
   await mergeSort(arr_merge, 0, arr_merge.length - 1);
   console.log("Merge Sorting Done!");
+  await new Promise((resolve) =>
+        setTimeout(() => {
+          resolve();
+        }, parseInt(50))
+      );
   window.alert("Merge Sorting Done!");
 }
 // --------------------------------QuickSort--------------------------------------
@@ -286,7 +301,7 @@ async function partition(arr_q, qlow, qhigh) {
   let arrayHTML = document.getElementById("arr");
   let arrayElements = arrayHTML.getElementsByClassName("elem");
 
-  arrayElements[qlow].style.backgroundColor = "red";
+  arrayElements[qlow].style.backgroundColor = "rgb(121, 3, 3)";
   let pivot = arr_q[qlow];
   let qi = qlow + 1;
   let qj = qhigh;
@@ -378,5 +393,10 @@ const quicksort_start = async () => {
   let quick_arr = arr;
   await quicksort(quick_arr, 0, quick_arr.length - 1);
   console.log("QuickSort Done!");
+  await new Promise((resolve) =>
+        setTimeout(() => {
+          resolve();
+        }, parseInt(50))
+      );
   window.alert("QuickSort Done!");
 }
